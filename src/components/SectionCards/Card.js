@@ -7,7 +7,7 @@ const Card = (props) => {
 
   return (
     <Container
-      style={{ backgroundColor: "white", padding: 15, borderRadius: 10 }}
+      style={{ backgroundColor: "white", padding: 15, borderRadius: 10, minHeight: 110 }}
     >
       <Row>
         <Col xs={12} className="d-flex justify-content-between">
@@ -22,7 +22,7 @@ const Card = (props) => {
               <div>
                 <h6>
                   ${amount}
-                  <p className="m-0" style={{ color: "grey", fontSize: 12 }}>
+                  <p className="m-0" style={{ color: "grey", fontSize: 11 }}>
                     {description}
                   </p>
                 </h6>
