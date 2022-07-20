@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+
 export const StyledDiv = styled.div`
   .react-dataTable {
     border-radius: 0;
@@ -35,6 +36,10 @@ export const StyledDiv = styled.div`
     .rdt_TableBody {
       .rdt_TableRow {
         color: #6e6b7b;
+        min-height: 100px;
+        @media (max-width: 767px) {
+          min-height: 160px;
+        }
         .rdt_TableCell {
           height: 53px;
           padding: 0.72rem 1.5rem;
@@ -186,16 +191,9 @@ export const StyledDiv = styled.div`
       margin-right: 0.3571rem;
       .page-link {
         border-radius: 50%;
+        background-color: #f3f2f7;
         &:before {
-          background-image: url(str-replace(
-            str-replace(
-              "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-left'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E",
-              "currentColor",
-              #6e6b7b
-            ),
-            "#",
-            "%23"
-          ));
+          background-image: url("https://i.ibb.co/Y29fpXM/chevron-left.png");
           background-repeat: no-repeat;
           background-position: center;
           background-size: 14px;
@@ -210,7 +208,7 @@ export const StyledDiv = styled.div`
         }
         &:active,
         &:hover {
-          background-color: #7367f0 !important;
+          /* background-color: #7367f0 !important; */
           &:before {
             background-image: url(str-replace(
               str-replace(
@@ -260,16 +258,9 @@ export const StyledDiv = styled.div`
       margin-left: 0.3571rem;
       .page-link {
         border-radius: 50%;
+        background-color: #f3f2f7;
         &:after {
-          background-image: url(str-replace(
-            str-replace(
-              "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-right'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E",
-              "currentColor",
-              #6e6b7b
-            ),
-            "#",
-            "%23"
-          ));
+          background-image: url("https://i.ibb.co/zm4GPJ6/chevron-right.png");
           background-repeat: no-repeat;
           background-position: center;
           background-size: 14px;
@@ -283,7 +274,7 @@ export const StyledDiv = styled.div`
         }
         &:active,
         &:hover {
-          background-color: #7367f0 !important;
+          /* background-color: #7367f0 !important; */
           &:after {
             background-image: url(str-replace(
               str-replace(

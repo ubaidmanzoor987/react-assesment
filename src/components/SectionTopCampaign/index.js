@@ -3,7 +3,7 @@ import DataTables from "../core/Table";
 
 const TopCampaign = () => {
   const cell = (row) => (
-    <div style={{ marginTop: 10 }}>
+    <div style={{ marginTop: 40 }}>
       <p className="m-0">
         <b>Name: </b> {row.full_name}
       </p>
@@ -255,7 +255,7 @@ const TopCampaign = () => {
         data={data}
         basicColumns={basicColumns}
         title={"Top Compaign"}
-        rowHeight={80}
+        rowHeight={100}
       />
     </Container>
   );

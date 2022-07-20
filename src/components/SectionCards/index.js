@@ -18,51 +18,46 @@ const SectionCards = () => {
     },
     {
       id: 3,
-      title: "Cost Per conversion",
-      description: "Per conversion",
-      amount: 32.98,
+      title: "Clicks",
+      description: "Click on your campaign content",
+      amount: 90,
     },
     {
       id: 4,
-      title: "Conversion",
-      description: "page visit that converted to transactions",
-      amount: 8.67,
+      title: "Conversion Rate",
+      description: "Conversion Rate",
+      amount: 9.14,
     },
     {
       id: 5,
-      title: "Cost Per conversion",
-      description: "Per conversion",
-      amount: 32.98,
+      title: "Total Cost",
+      description: "Cost",
+      amount: 10.04,
     },
     {
       id: 6,
-      title: "Conversion",
-      description: "page visit that converted to transactions",
-      amount: 8.67,
+      title: "Cost Per Click",
+      description: "Per Click",
+      amount: 4.23,
     },
     {
       id: 7,
-      title: "Cost Per conversion",
-      description: "Per conversion",
-      amount: 32.98,
+      title: "Clicks Through Rate",
+      description: "CTR",
+      amount: 6.19,
     },
     {
       id: 8,
-      title: "Conversion",
-      description: "page visit that converted to transactions",
-      amount: 8.67,
+      title: "Impression",
+      description: "The number of times your campaign show",
+      amount: 2347,
     },
   ];
   return (
     <Container className="mb-4">
       <Row>
         {data.map((dt) => (
-          <Col
-            md={3}
-            xs={12}
-            key={dt.id}
-            className="mt-4"
-          >
+          <Col md={3} xs={12} key={dt.id} className="mt-4">
             <Card {...dt} />
           </Col>
         ))}

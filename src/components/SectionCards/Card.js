@@ -25,7 +25,13 @@ const Card = (props) => {
             <CardTitle className="fw-bold" tag="h6">
               {title}
             </CardTitle>
-            <img src={drive} width="25" height="25" alt="dollar" />
+            <img
+              className="drive"
+              src={drive}
+              width="25"
+              height="25"
+              alt="drive"
+            />
           </Col>
           <Col xs={12}>
             <Row>

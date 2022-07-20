@@ -16,7 +16,7 @@ const SectionPeriod = () => {
   };
 
   return (
-    <Draggable onStart={onStart} onStop={onStop} >
+    <Draggable onStart={onStart} onStop={onStop}>
       <Container className="mt-4">
         <Row>
           <Col md={8} xs={12}>

@@ -1,9 +1,10 @@
 import { Container } from "reactstrap";
 import DataTables from "../core/Table";
+import { StyledDiv } from "./index.style";
 
 const TopAddGroup = () => {
   const cell = (row) => (
-    <div style={{ marginTop: 40 }}>
+    <StyledDiv>
       <p className="m-0">
         <b>Base Ad Group: </b> {row.full_name}
       </p>
@@ -16,7 +17,7 @@ const TopAddGroup = () => {
       <p className="m-0">
         <b>Ad network type: </b> {row.network_type}
       </p>
-    </div>
+    </StyledDiv>
   );
 
   const basicColumns = [
@@ -626,7 +627,7 @@ const TopAddGroup = () => {
         data={data}
         basicColumns={basicColumns}
         title={"Top Ad Group"}
-        rowHeight={100}
+        rowHeight={170}
       />
     </Container>
   );

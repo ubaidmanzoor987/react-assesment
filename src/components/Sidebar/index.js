@@ -9,17 +9,15 @@ import "react-pro-sidebar/dist/css/styles.css";
 import { StyledSidebar } from "./index.styles";
 
 const SideBar = () => {
-  const [collapsed, setCollapsed] = useState(false);
-  const [toggled, setToggled] = useState(false);
+  const [toggled, setToggled] = useState(true);
 
   const handleToggleSidebar = (value) => {
     setToggled(value);
   };
   return (
     <StyledSidebar
-      collapsed={collapsed}
       toggled={toggled}
-      breakPoint="md"
+      breakPoint="sm"
       onToggle={handleToggleSidebar}
     >
       <Menu iconShape="square">
@@ -32,7 +30,7 @@ const SideBar = () => {
             alt="creative"
             style={{ marginTop: 5 }}
           />
-          <p>Pixis Ai</p>
+          <p>Pixis AI</p>
         </div>
         <SubMenu
           className="mt-4"
@@ -43,14 +41,14 @@ const SideBar = () => {
           <MenuItem>Component 2</MenuItem>
         </SubMenu>
         <SubMenu
-          title="Targeting Ai"
+          title="Targeting AI"
           icon={<img src={targeting} width="40" height="30" alt="targeting" />}
         >
           <MenuItem>Component 1</MenuItem>
           <MenuItem>Component 2</MenuItem>
         </SubMenu>
         <SubMenu
-          title="Creative Ai"
+          title="Creative AI"
           icon={<img src={creative} width="40" height="30" alt="creative" />}
         >
           <MenuItem>Component 1</MenuItem>

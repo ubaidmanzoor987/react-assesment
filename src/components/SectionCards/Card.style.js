@@ -6,4 +6,10 @@ export const StyledCardContainer = styled(Container)`
   padding: 15px;
   border-radius: 10px;
   min-height: 110px;
+
+  @media (max-width: 767px) {
+    .drive {
+      margin-right: 8px !important;
+    }
+  }
 `;
