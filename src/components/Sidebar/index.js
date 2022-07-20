@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import governance from "../../assets/governance.PNG";
 import targeting from "../../assets/targeting.PNG";
@@ -8,12 +8,9 @@ import pixis from "../../assets/pixis.PNG";
 import "react-pro-sidebar/dist/css/styles.css";
 import { StyledSidebar } from "./index.styles";
 
-const SideBar = () => {
-  const [toggled, setToggled] = useState(true);
+const SideBar = (props) => {
+  const { toggled, handleToggleSidebar } = props;
 
-  const handleToggleSidebar = (value) => {
-    setToggled(value);
-  };
   return (
     <StyledSidebar
       toggled={toggled}

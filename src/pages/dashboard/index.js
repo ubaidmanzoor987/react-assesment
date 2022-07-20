@@ -7,10 +7,10 @@ import SectionTopCampaign from "../../components/SectionTopCampaign";
 import SectionTopAdGroup from "../../components/SectionTopAdGroup";
 import { StyledContainer } from "./index.styles";
 
-const DashBoard = () => {
+const DashBoard = (props) => {
   return (
     <StyledContainer>
-      <SectionHeading />
+      <SectionHeading {...props} />
       <SectionPeriod />
       <SectionCards />
       <SectionAreaChart />

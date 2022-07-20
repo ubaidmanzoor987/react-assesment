@@ -110,12 +110,12 @@ const CardGraph = (props) => {
   return (
     <Card style={{ backgroundColor: "white", padding: 15, borderRadius: 10 }}>
       <Row>
-        <Col xs={8}>
+        <Col md={8} xs={5}>
           <CardTitle className="fw-bold" tag="h6">
             Conversation Over time
           </CardTitle>
         </Col>
-        <Col xs={4}>
+        <Col md={4} xs={7}>
           <div className="w-100 d-flex justify-content-end">
             <Circle className="px-1 mt-1" color="#B9B9C3" />
             <p
@@ -132,7 +132,9 @@ const CardGraph = (props) => {
         </Col>
       </Row>
       <Row className="mt-1">
-        <Chart options={options} series={series} type="line" height="175" />
+        <Col xs={12}>
+          <Chart options={options} series={series} type="line" height="175" />
+        </Col>
       </Row>
     </Card>
   );
