@@ -1,6 +1,9 @@
 import React from "react";
-import { Row, Col, Container } from "reactstrap";
+import { Row, Container } from "reactstrap";
 import Card from "./Card";
+import { StyledDiv } from "./Card.style";
+import { Responsive, WidthProvider } from "react-grid-layout";
+const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 const SectionCards = () => {
   const data = [
@@ -53,14 +56,32 @@ const SectionCards = () => {
       amount: 2347,
     },
   ];
+  let ind = -1;
+
   return (
-    <Container className="mb-4">
+    <Container className="mt-2 mb-5 margin-left">
       <Row>
-        {data.map((dt) => (
-          <Col md={3} xs={12} key={dt.id} className="mt-4">
-            <Card {...dt} />
-          </Col>
-        ))}
+        <ResponsiveReactGridLayout
+          cols={{ lg: 4, md: 4, sm: 1, xs: 1, xxs: 1 }}
+          isResizable={false}
+          isBounded
+        >
+          {data.map((dt) => {
+            if (ind >= 4) {
+              ind = -1;
+            }
+            ind++;
+            return (
+              <StyledDiv
+                key={dt.id.toString()}
+                data-grid={{ x: ind, y: 0, w: 1, h: 0.8 }}
+                className="mt-4"
+              >
+                <Card {...dt} />
+              </StyledDiv>
+            );
+          })}
+        </ResponsiveReactGridLayout>
       </Row>
     </Container>
   );

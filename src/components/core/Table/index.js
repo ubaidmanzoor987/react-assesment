@@ -6,7 +6,7 @@ import DataTable from "react-data-table-component";
 import { Card, CardTitle } from "reactstrap";
 import { StyledDiv } from "./index.styles";
 const DataTablesReOrder = (props) => {
-  const { data, basicColumns, title, rowHeight } = props;
+  const { data, basicColumns, title } = props;
   const [currentPage, setCurrentPage] = useState(0);
   const handlePagination = (page) => {
     setCurrentPage(page.selected);
