@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import Draggable from "react-draggable";
 import Chart from "react-apexcharts";
 import drive from "../../assets/drive.PNG";
 
@@ -8,6 +10,14 @@ const areaColors = {
   series1: "#F6C060",
 };
 const ApexAreaCharts = ({ direction }) => {
+  const [activeDrags, setActiveDrags] = useState(0);
+  const onStart = () => {
+    setActiveDrags(activeDrags + 1);
+  };
+
+  const onStop = () => {
+    setActiveDrags(activeDrags - 1);
+  };
   const options = {
     chart: {
       parentHeightOffset: 0,
@@ -81,19 +91,21 @@ const ApexAreaCharts = ({ direction }) => {
     },
   ];
   return (
-    <Container>
-      <Card className="p-3" style={{ borderRadius: 10 }}>
-        <div className="d-flex flex-md-row flex-column justify-content-md-between justify-content-start align-items-md-center align-items-start">
-          <h4>Conversation Over time</h4>
-          <div className="d-flex align-items-center mt-md-0 mt-1">
-            <img src={drive} width="30" height="30" alt="dollar" />
+    <Draggable onStart={onStart} onStop={onStop}>
+      <Container>
+        <Card className="p-3" style={{ borderRadius: 10 }}>
+          <div className="d-flex flex-md-row flex-column justify-content-md-between justify-content-start align-items-md-center align-items-start">
+            <h4>Conversation Over time</h4>
+            <div className="d-flex align-items-center mt-md-0 mt-1">
+              <img src={drive} width="30" height="30" alt="dollar" />
+            </div>
           </div>
-        </div>
-        <CardBody>
-          <Chart options={options} series={series} type="area" height={350} />
-        </CardBody>
-      </Card>
-    </Container>
+          <CardBody>
+            <Chart options={options} series={series} type="area" height={350} />
+          </CardBody>
+        </Card>
+      </Container>
+    </Draggable>
   );
 };
 export default ApexAreaCharts;

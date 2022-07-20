@@ -1,19 +1,37 @@
+import React, { useState } from "react";
+import { Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import governance from "../../assets/governance.PNG";
 import targeting from "../../assets/targeting.PNG";
 import creative from "../../assets/creative.PNG";
 import pixis from "../../assets/pixis.PNG";
 
-import { Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import { StyledSidebar } from "./index.styles";
 
 const SideBar = () => {
+  const [collapsed, setCollapsed] = useState(false);
+  const [toggled, setToggled] = useState(false);
+
+  const handleToggleSidebar = (value) => {
+    setToggled(value);
+  };
   return (
-    <StyledSidebar breakPoint="sm">
+    <StyledSidebar
+      collapsed={collapsed}
+      toggled={toggled}
+      breakPoint="md"
+      onToggle={handleToggleSidebar}
+    >
       <Menu iconShape="square">
         <h4>AI Optimizer</h4>
         <div className="search">
-          <img src={pixis} width="40" height="30" alt="creative" style={{marginTop: 5}} />
+          <img
+            src={pixis}
+            width="40"
+            height="30"
+            alt="creative"
+            style={{ marginTop: 5 }}
+          />
           <p>Pixis Ai</p>
         </div>
         <SubMenu
